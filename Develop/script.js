@@ -1,5 +1,4 @@
 var timeBlock = $(".time-block");
 
-timeBlock(){
-    for (i=0; )
-}
+for timeBlock( var i= 0; i<){
+   
