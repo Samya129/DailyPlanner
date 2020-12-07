@@ -1,54 +1,26 @@
-
+//Date 
 $("#currentDay").text(luxon.DateTime.local().toLocaleString({
     weekday: "long",
     month: "long",
     day: "2-digit",
 })
 );   
+//console.log(currentTime);
+//time block for present, past and future.        
+function timePpF(){
+
+}; 
+
+var saveBtn = $(".saveBtn")
+saveBtn.on("click", function() {
+  //alert("This works?")
+  
+  let timeSchedule = $(this).siblings(".hour").text();
+  let text = $(this).siblings("#Text").val();
+  console.log(timeSchedule);
+  console.log(text);
+  
+  localStorage.setItem(timeSchedule, text);
+  });
 
 
-//time block for present, past and future. 
-let currentTime = luxon.DateTime.local().toLocaleString({
-
-hour: "2-digit",
-});
-
-console.log(currentTime);
-        
-function PPF(){
-
-
-    
-}
-   
-
-
-
-//get element by id for jQuery
-//var dt = DateTime.local( month, day, year);
-//$("#currentDay").text(dt);
-var timeBlock = $(".time-block");
-var hour = $(".hour");
-var timeBlock = $(".time-block");
-var saveBtn = $(".saveBtn");
-
-
-//var agenda = [];
-
-//init()
-
-function init(){
-    // Get stored agenda from localStorage
-  // Parsing the JSON string to an object
-  var storedAgenda = JSON.parse(localStorage.getItem("agenda"));
-
-  // If agenda were retrieved from localStorage, update the agenda array to it
-  if (storedAgenda !== null) {
-    agenda = storedAgenda;
-  }
-
-  // Render agenda to the DOM
-  //renderAgenda();
-}
-//for timeBlock ( var i= 0; i< timeBlock; i++){
-    //year.month.day.hour.minute.
