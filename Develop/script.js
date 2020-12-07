@@ -10,6 +10,22 @@ $("#currentDay").text(luxon.DateTime.local().toLocaleString({
 function timePpF(){
 
 }; 
+//For each time block for each color
+$(".time-block").each(function(){
+  let presentHour = parseInt($(this).attr("id"));
+
+  //console.log(presentHour) //referring to each time block hour
+
+  //console.log(this)
+  if(formattedHour > presentHour){
+    $(this).addClass("past");
+    //console.log("past? You there?")
+  } else if (presentHour === formattedHour){
+    $(this).addClass("present");
+  } else { (presentHour < formattedHour)
+    $(this).addClass("future");
+}
+});
 
 var saveBtn = $(".saveBtn")
 saveBtn.on("click", function() {
@@ -22,7 +38,6 @@ saveBtn.on("click", function() {
   
   localStorage.setItem(timeSchedule, text);
   });
-
 
 function storedAgenda (){
   $(".hour").each(function(){
