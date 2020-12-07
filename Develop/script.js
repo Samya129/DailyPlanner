@@ -24,3 +24,14 @@ saveBtn.on("click", function() {
   });
 
 
+function storedAgenda (){
+  $(".hour").each(function(){
+    let presentHour = $(this).text();
+    let storedAgenda = localStorage.getItem(presentHour);
+
+    if (storedAgenda !== null) {
+      $(this).siblings("textarea").val(storedAgenda);
+     }
+  })
+  
+}
