@@ -6,23 +6,34 @@ $("#currentDay").text(luxon.DateTime.local().toLocaleString({
 })
 );   
 //console.log(currentTime);
-//time block for present, past and future.        
-function timePpF(){
+//Need a function that can go through all the times in the same smooth way. Not just am but pm as well.       
+function timeElement(){
+  let correctHour = luxon.DateTime.local().toLocaleString({hour: "2-digit"});
+  //
+  let fixedHour = parseInt(correctHour[0] + correctHour[1]);
+
+  if(correctHour.indexOf("PM")){
+     //console.log(correctHour)
+    //add 12 hours so that we will get the right index of time.
+   
+    fixedHour += 12;
+   //console.log(fixedHour);
+  }
 
 }; 
-//For each time block for each color
+//For each time block we need to add color depending on time of day with if/else function for determination.
 $(".time-block").each(function(){
   let presentHour = parseInt($(this).attr("id"));
-
-  //console.log(presentHour) //referring to each time block hour
+  //console.log(presentHour) 
 
   //console.log(this)
-  if(formattedHour > presentHour){
+  if(fixedHour > presentHour){
     $(this).addClass("past");
     //console.log("past? You there?")
-  } else if (presentHour === formattedHour){
+  } else if (presentHour === fixedHour){
     $(this).addClass("present");
-  } else { (presentHour < formattedHour)
+    //console.log("present? Are you working?")
+  } else { (presentHour < fixedHour)
     $(this).addClass("future");
 }
 });
@@ -33,8 +44,8 @@ saveBtn.on("click", function() {
   
   let timeSchedule = $(this).siblings(".hour").text();
   let text = $(this).siblings("#Text").val();
-  console.log(timeSchedule);
-  console.log(text);
+  //console.log(timeSchedule);
+  //console.log(text);
   
   localStorage.setItem(timeSchedule, text);
   });
