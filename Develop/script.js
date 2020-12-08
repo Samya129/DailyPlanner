@@ -8,17 +8,7 @@ $("#currentDay").text(luxon.DateTime.local().toLocaleString({
 //console.log(currentTime);
 //Need a function that can go through all the times in the same smooth way. Not just am but pm as well.       
 function timePpF(){
-
-let hourElement = luxon.DateTime.local().toLocaleString({hour: "2-digit"});
-//we are parsing the string of hour to return an interger
-let fixedHour = parseInt(hourElement[0] + hourElement[1]);
-
-if(hourElement.indexOf("PM") !== -1) {
-   //console.log(hourElement)
- 
-  fixedHour += 12;
- //console.log(fixedHour);
-}
+let fixedHour = parseInt(moment().format("H"));
 
 //For each time block, we need to add color depending on time of day with if/else function for determination.
 $(".time-block").each(function(){
