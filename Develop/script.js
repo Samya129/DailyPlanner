@@ -13,7 +13,7 @@ let hourElement = luxon.DateTime.local().toLocaleString({hour: "2-digit"});
 //we are parsing the string of hour to return an interger
 let fixedHour = parseInt(hourElement[0] + hourElement[1]);
 
-if(hourElement.indexOf("PM")){
+if(hourElement.indexOf("PM") !== -1) {
    //console.log(hourElement)
  
   fixedHour += 12;
