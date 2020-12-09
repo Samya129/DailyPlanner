@@ -16,7 +16,7 @@ Source Links:
 
     -https://github.com/Samya129
 
-    -https://github.com/Samya129/DailyPlanner
+    -https://samya129.github.io/DailyPlanner/
 
 Table of Contents:
 
@@ -25,4 +25,4 @@ Table of Contents:
     Credits: None
     License: None
 
-![GitHub Logo](/images/DailyCalendar.png) Format:![Daily Calendar demo image]
+![GitHub Logo](./images/DailyCalendar.png) Format:![Daily Calendar demo image]
