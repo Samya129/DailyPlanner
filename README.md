@@ -25,4 +25,4 @@ Table of Contents:
     Credits: None
     License: None
 
-![GitHub Logo](./images/DailyCalendar.png) Format:![Daily Calendar demo image]
+![GitHub Logo](/Images/DailyCalendar.png) Format:![Daily Calendar demo image]
